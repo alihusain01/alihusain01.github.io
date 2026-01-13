@@ -1,19 +1,19 @@
 import DashedBackground from "@/components/DashedBackground";
 import Navigation from "@/components/Navigation";
-import AboutSection from "@/components/AboutSection";
+import RacesSection from "@/components/RacesSection";
 import Footer from "@/components/Footer";
 
-const Index = () => {
+const Races = () => {
   return (
     <div className="min-h-screen bg-background relative">
       <DashedBackground />
       <Navigation />
       <main>
-        <AboutSection />
+        <RacesSection />
       </main>
       <Footer />
     </div>
   );
 };
 
-export default Index;
+export default Races;

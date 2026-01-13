@@ -60,8 +60,7 @@ const ExperienceSection = () => {
               
               <ul className="space-y-1.5">
                 {exp.description.map((item, i) => (
-                  <li key={i} className="text-foreground text-sm flex items-start gap-2">
-                    <span className="text-muted-foreground">•</span>
+                <li key={i} className="text-foreground text-sm">
                     {item}
                   </li>
                 ))}

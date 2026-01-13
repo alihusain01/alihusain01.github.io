@@ -13,7 +13,7 @@ const experiences: Experience[] = [
   {
     company: "Tech Company",
     roles: [
-      { title: "Senior Software Engineer", period: "2023 - Present", tech: ["TypeScript", "React", "AWS"] },
+      { title: "Software Engineer - Network Planning", period: "2023 - Present", tech: ["TypeScript", "React", "AWS"] },
       { title: "Software Engineer II", period: "2022 - 2023", tech: ["TypeScript", "React", "Node.js"] },
       { title: "Software Engineer", period: "2021 - 2022", tech: ["JavaScript", "React", "Express"] },
       { title: "Junior Software Engineer", period: "2020 - 2021", tech: ["JavaScript", "HTML", "CSS"] },

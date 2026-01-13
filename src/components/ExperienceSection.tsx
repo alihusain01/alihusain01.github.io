@@ -94,7 +94,7 @@ const ExperienceSection = () => {
         </div>
 
         <div className="mt-16">
-          <h3 className="text-xl font-bold text-foreground mb-8">Certifications</h3>
+          <h3 className="text-xl font-bold text-foreground mb-4">Certifications</h3>
           <div className="space-y-4">
             {certifications.map((cert, index) => (
               <div key={index} className="flex flex-col md:flex-row md:items-center md:justify-between gap-1">

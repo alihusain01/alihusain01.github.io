@@ -11,28 +11,40 @@ interface Experience {
 
 const experiences: Experience[] = [
   {
-    company: "Tech Company",
+    company: "United Airlines",
     roles: [
-      { title: "Software Engineer - Network Planning", period: "2023 - Present", tech: ["TypeScript", "React", "AWS"] },
-      { title: "Software Engineer II", period: "2022 - 2023", tech: ["TypeScript", "React", "Node.js"] },
-      { title: "Software Engineer", period: "2021 - 2022", tech: ["JavaScript", "React", "Express"] },
-      { title: "Junior Software Engineer", period: "2020 - 2021", tech: ["JavaScript", "HTML", "CSS"] },
-    ]
+      {
+        title: "Full-Stack Software Engineer - Network Planning",
+        period: "Feb 2026 - Present",
+        tech: ["AWS", "Java", "React"],
+      },
+      {
+        title: "Cloud Engineer - Pricing & Revenue Management",
+        period: "Aug 2025 - Feb 2026",
+        tech: ["AWS", "Python", "SQL"],
+      },
+      {
+        title: "Product Analyst - Lobby Optimization",
+        period: "Feb 2025 - Aug 2025",
+        tech: ["Product Design", "SQL", "Communication"],
+      },
+      { title: "Gen AI Engineer", period: "Aug 2024 - Feb 2025", tech: ["RAG", "Gen AI", "Python"] },
+    ],
   },
   {
-    company: "Startup Inc",
+    company: "Angel Star Ventures",
     roles: [
       { title: "Lead Engineer", period: "2021 - 2022", tech: ["Python", "Django", "AWS"] },
       { title: "Software Engineer", period: "2020 - 2021", tech: ["Python", "Django", "PostgreSQL", "Docker"] },
-    ]
+    ],
   },
   {
     company: "Agency Co",
     roles: [
       { title: "Developer", period: "2019 - 2020", tech: ["JavaScript", "Vue.js", "Node.js"] },
       { title: "Junior Developer", period: "2018 - 2019", tech: ["JavaScript", "PHP", "MySQL"] },
-    ]
-  }
+    ],
+  },
 ];
 
 const TechList = ({ tech }: { tech?: string[] }) => {
@@ -41,7 +53,8 @@ const TechList = ({ tech }: { tech?: string[] }) => {
     <div className="flex flex-wrap gap-2">
       {tech.map((t, i) => (
         <span key={i} className="text-xs text-muted-foreground">
-          {t}{i < tech.length - 1 && " ·"}
+          {t}
+          {i < tech.length - 1 && " ·"}
         </span>
       ))}
     </div>
@@ -53,7 +66,7 @@ const ExperienceSection = () => {
     <section id="experience" className="py-16 relative z-10">
       <div className="max-w-4xl mx-auto px-6">
         <h2 className="text-3xl font-bold text-foreground mb-12">Experience</h2>
-        
+
         <div className="space-y-12">
           {experiences.map((exp, index) => (
             <div key={index} className="space-y-3">

@@ -5,7 +5,7 @@ const AboutSection = () => {
         <div className="space-y-8">
           <h1 className="text-4xl font-bold text-foreground">Ali Husain</h1>
           <p className="text-lg text-foreground leading-relaxed max-w-2xl">
-            Hey! I'm currently in the Early Career Leadership Development Program at United Airlines
+            Hey! I'm currently in the Early Career Leadership Development Program at United Airlines.
           </p>
         </div>
       </div>

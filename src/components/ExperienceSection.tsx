@@ -44,48 +44,41 @@ const experiences: Experience[] = [
 
 const ExperienceSection = () => {
   return (
-    <section id="experience" className="py-20 relative z-10">
+    <section id="experience" className="py-16 relative z-10">
       <div className="max-w-4xl mx-auto px-6">
-        <h2 className="font-mono text-sm text-accent mb-12">// professional experience</h2>
+        <h2 className="text-2xl font-bold text-foreground mb-12">Experience</h2>
         
         <div className="space-y-12">
           {experiences.map((exp, index) => (
-            <div 
-              key={index} 
-              className="group relative pl-6 border-l-2 border-dashed border-grid hover:border-accent transition-colors"
-            >
-              <div className="absolute -left-[7px] top-0 w-3 h-3 rounded-full bg-background border-2 border-grid group-hover:border-accent transition-colors" />
-              
-              <div className="space-y-3">
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-1">
-                  <h3 className="text-xl font-semibold text-foreground">{exp.title}</h3>
-                  <span className="font-mono text-sm text-muted-foreground">{exp.period}</span>
-                </div>
-                
-                <p className="text-accent font-medium">{exp.company}</p>
-                
-                <ul className="space-y-2">
-                  {exp.description.map((item, i) => (
-                    <li key={i} className="text-muted-foreground flex items-start gap-2">
-                      <span className="text-accent font-mono">→</span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-                
-                {exp.tech && (
-                  <div className="flex flex-wrap gap-2 pt-2">
-                    {exp.tech.map((t, i) => (
-                      <span 
-                        key={i} 
-                        className="px-2 py-1 bg-muted text-muted-foreground font-mono text-xs rounded"
-                      >
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-                )}
+            <div key={index} className="space-y-3">
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-1">
+                <h3 className="text-lg font-semibold text-foreground">{exp.title}</h3>
+                <span className="text-sm text-muted-foreground">{exp.period}</span>
               </div>
+              
+              <p className="text-muted-foreground">{exp.company}</p>
+              
+              <ul className="space-y-1.5">
+                {exp.description.map((item, i) => (
+                  <li key={i} className="text-foreground text-sm flex items-start gap-2">
+                    <span className="text-muted-foreground">•</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              
+              {exp.tech && (
+                <div className="flex flex-wrap gap-2 pt-1">
+                  {exp.tech.map((t, i) => (
+                    <span 
+                      key={i} 
+                      className="text-xs text-muted-foreground"
+                    >
+                      {t}{i < exp.tech!.length - 1 && " ·"}
+                    </span>
+                  ))}
+                </div>
+              )}
             </div>
           ))}
         </div>

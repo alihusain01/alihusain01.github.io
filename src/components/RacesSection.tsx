@@ -94,6 +94,8 @@ const RacesSection = () => {
               <Medal finishTime={race.finishTime} />
               
               <div className="flex-1 space-y-3">
+                <h3 className="text-xl font-semibold text-foreground">{race.name}</h3>
+                
                 <div className="flex items-start gap-3 text-sm text-muted-foreground">
                   <span>{race.type}</span>
                   <span>·</span>
@@ -101,8 +103,6 @@ const RacesSection = () => {
                   <span>·</span>
                   <span>{race.date}</span>
                 </div>
-                
-                <h3 className="text-xl font-semibold text-foreground">{race.name}</h3>
                 
                 <div className="flex gap-6 text-sm">
                   {race.stats.map((stat, i) => (

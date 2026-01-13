@@ -60,10 +60,10 @@ const DashedBackground = () => {
               .map(pulse => (
                 <div
                   key={pulse.id}
-                  className="absolute left-1/2 -translate-x-1/2 w-1 h-8 rounded-full animate-pulse-vertical"
+                  className="absolute left-1/2 -translate-x-1/2 w-px h-12 rounded-full animate-pulse-vertical"
                   style={{
-                    background: 'linear-gradient(to bottom, transparent, rgba(255,255,255,0.6), transparent)',
-                    boxShadow: '0 0 8px 2px rgba(255,255,255,0.3)',
+                    background: 'linear-gradient(to bottom, transparent, rgba(255,255,255,0.25), transparent)',
+                    boxShadow: '0 0 6px 1px rgba(255,255,255,0.1)',
                     animationDuration: `${pulse.duration}s`,
                   }}
                 />
@@ -85,10 +85,10 @@ const DashedBackground = () => {
               .map(pulse => (
                 <div
                   key={pulse.id}
-                  className="absolute top-1/2 -translate-y-1/2 h-1 w-16 rounded-full animate-pulse-horizontal"
+                  className="absolute top-1/2 -translate-y-1/2 h-px w-20 rounded-full animate-pulse-horizontal"
                   style={{
-                    background: 'linear-gradient(to right, transparent, rgba(255,255,255,0.6), transparent)',
-                    boxShadow: '0 0 8px 2px rgba(255,255,255,0.3)',
+                    background: 'linear-gradient(to right, transparent, rgba(255,255,255,0.25), transparent)',
+                    boxShadow: '0 0 6px 1px rgba(255,255,255,0.1)',
                     animationDuration: `${pulse.duration}s`,
                   }}
                 />

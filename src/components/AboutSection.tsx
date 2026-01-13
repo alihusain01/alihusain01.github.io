@@ -9,7 +9,7 @@ const AboutSection = () => {
           </p>
           <p className="text-lg text-foreground leading-relaxed max-w-2xl">
             I think about this quote, from Matthew McConaughey’s Greenlights, a lot. It reminds me that I may not have
-            all the answers right now—but that’s okay. What matters is staying in motion, trusting that clarity comes
+            all the answers right now, but that’s okay. What matters is staying in motion, trusting that clarity comes
             from action, and believing that the road keeps revealing itself one step at a time as long as I keep showing
             up.
           </p>

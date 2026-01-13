@@ -90,7 +90,7 @@ const RacesSection = () => {
         
         <div className="space-y-12">
           {races.map((race, index) => (
-            <div key={index} className="flex items-start gap-8">
+            <div key={index} className="flex items-center gap-8">
               <Medal finishTime={race.finishTime} />
               
               <div className="flex-1 pt-2 space-y-3">

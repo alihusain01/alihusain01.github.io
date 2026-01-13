@@ -4,6 +4,9 @@ const AboutSection = () => {
       <div className="max-w-4xl mx-auto px-6">
         <div className="space-y-8">
           <h1 className="text-4xl font-bold text-foreground">Ali Husain</h1>
+          <blockquote className="text-xl italic text-muted-foreground border-l-4 border-primary pl-4 mb-4">
+            "Sometimes which choice you make is not as important as making a choice and committing to it."
+          </blockquote>
           <p className="text-lg text-foreground leading-relaxed max-w-2xl">
             Hey! I'm currently in the Early Career Leadership Development Program at United Airlines. This two year
             program exposes new-grads to different functions in the business including software engineering and product

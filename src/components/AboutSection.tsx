@@ -1,5 +1,6 @@
 const AboutSection = () => {
-  return <section id="about" className="py-16 relative z-10">
+  return (
+    <section id="about" className="py-16 relative z-10">
       <div className="max-w-4xl mx-auto px-6">
         <div className="space-y-8">
           <h1 className="font-bold text-foreground text-5xl">Ali Husain</h1>
@@ -8,12 +9,13 @@ const AboutSection = () => {
           </p>
           <p className="text-lg text-foreground leading-relaxed max-w-2xl">
             I think about this quote, from Matthew McConaughey’s Greenlights, a lot. It reminds me that I may not have
-            all the answers right now, but that’s okay. \n What matters is staying in motion, trusting that clarity
-            comes from action, and believing that the road keeps revealing itself one step at a time as long as I keep
-            showing up.
+            all the answers right now, but that’s okay. What matters is staying in motion, trusting that clarity comes
+            from action, and believing that the road keeps revealing itself one step at a time as long as I keep showing
+            up.
           </p>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
 export default AboutSection;

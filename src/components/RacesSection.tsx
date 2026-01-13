@@ -61,7 +61,7 @@ const races: Race[] = [
   }
 ];
 
-const Medal = ({ finishTime }: { finishTime: string }) => (
+const Medal = () => (
   <div className="relative flex-shrink-0">
     {/* Ribbon */}
     <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-12 h-8 overflow-hidden">
@@ -73,11 +73,6 @@ const Medal = ({ finishTime }: { finishTime: string }) => (
     <div className="relative w-24 h-24 rounded-full border-4 border-muted-foreground/40 bg-background flex items-center justify-center">
       {/* Inner ring */}
       <div className="absolute inset-2 rounded-full border border-muted-foreground/20" />
-      
-      {/* Time display */}
-      <span className="text-sm font-mono font-semibold text-foreground tracking-tight">
-        {finishTime}
-      </span>
     </div>
   </div>
 );
@@ -91,7 +86,7 @@ const RacesSection = () => {
         <div className="space-y-12">
           {races.map((race, index) => (
             <div key={index} className="flex items-start gap-8">
-              <Medal finishTime={race.finishTime} />
+              <Medal />
               
               <div className="flex-1 space-y-3">
                 <h3 className="text-xl font-semibold text-foreground">{race.name}</h3>
@@ -105,6 +100,10 @@ const RacesSection = () => {
                 </div>
                 
                 <div className="flex gap-6 text-sm">
+                  <div>
+                    <p className="text-muted-foreground">Time</p>
+                    <p className="text-foreground">{race.finishTime}</p>
+                  </div>
                   {race.stats.map((stat, i) => (
                     <div key={i}>
                       <p className="text-muted-foreground">{stat.label}</p>

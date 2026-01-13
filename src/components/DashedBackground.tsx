@@ -6,7 +6,7 @@ const DashedBackground = () => {
         {[...Array(3)].map((_, i) => (
           <div
             key={`v-${i}`}
-            className="h-full w-px bg-foreground/5"
+            className="h-full w-px bg-foreground/[0.15]"
           />
         ))}
       </div>
@@ -15,7 +15,7 @@ const DashedBackground = () => {
         {[...Array(3)].map((_, i) => (
           <div
             key={`h-${i}`}
-            className="w-full h-px bg-foreground/5"
+            className="w-full h-px bg-foreground/[0.15]"
           />
         ))}
       </div>

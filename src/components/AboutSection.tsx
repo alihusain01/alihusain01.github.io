@@ -4,7 +4,11 @@ const AboutSection = () => {
       <div className="max-w-4xl mx-auto px-6">
         <div className="space-y-8">
           <h1 className="text-4xl font-bold text-foreground">Ali Husain</h1>
-          <p className="text-lg text-foreground leading-relaxed max-w-2xl"></p>
+          <p className="text-lg text-foreground leading-relaxed max-w-2xl">
+            Hey! I'm currently in the Early Career Leadership Development Program at United Airlines. This two year
+            program exposes new-grads to different functions in the business including software engineering and product
+            management.
+          </p>
         </div>
       </div>
     </section>

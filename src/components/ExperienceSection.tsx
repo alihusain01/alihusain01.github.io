@@ -8,32 +8,37 @@ interface Experience {
 
 const experiences: Experience[] = [
   {
-    title: "Role 4",
-    company: "Company Name",
-    period: "2023 - Present",
-    description: [],
-    tech: []
+    title: "Senior Software Engineer",
+    company: "Tech Company",
+    period: "2022 - Present",
+    description: [
+      "Led development of microservices architecture serving 1M+ users",
+      "Mentored team of 5 junior developers on best practices",
+      "Reduced API response times by 40% through optimization"
+    ],
+    tech: ["TypeScript", "React", "Node.js", "AWS"]
   },
   {
-    title: "Role 3",
-    company: "Company Name",
-    period: "2021 - 2023",
-    description: [],
-    tech: []
+    title: "Software Engineer",
+    company: "Startup Inc",
+    period: "2020 - 2022",
+    description: [
+      "Built real-time collaboration features from scratch",
+      "Implemented CI/CD pipelines reducing deployment time by 60%",
+      "Contributed to open-source projects with 500+ stars"
+    ],
+    tech: ["Python", "Django", "PostgreSQL", "Docker"]
   },
   {
-    title: "Role 2",
-    company: "Company Name",
-    period: "2019 - 2021",
-    description: [],
-    tech: []
-  },
-  {
-    title: "Role 1",
-    company: "Company Name",
-    period: "2017 - 2019",
-    description: [],
-    tech: []
+    title: "Junior Developer",
+    company: "Agency Co",
+    period: "2018 - 2020",
+    description: [
+      "Developed responsive web applications for 20+ clients",
+      "Collaborated with design team on UI/UX improvements",
+      "Maintained legacy codebases and performed migrations"
+    ],
+    tech: ["JavaScript", "Vue.js", "PHP", "MySQL"]
   }
 ];
 

@@ -94,7 +94,7 @@ const RacesSection = () => {
               <Medal finishTime={race.finishTime} />
               
               <div className="flex-1 space-y-3">
-                <div className="flex items-center gap-3 text-sm text-muted-foreground">
+                <div className="flex items-start gap-3 text-sm text-muted-foreground">
                   <span>{race.type}</span>
                   <span>·</span>
                   <span>{race.location}</span>

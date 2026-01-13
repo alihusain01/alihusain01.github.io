@@ -59,7 +59,9 @@ const ExperienceSection = () => {
         <p className="text-muted-foreground mb-12">
           I'm currently in the Early Career Digital Leadership Program (ECDLP) at United Airlines. Through this 2 year
           program, I gained exposure to 4 different teams throughout the Digital Technology and Customer Product
-          departments at United. I’m also involved with Angel Star Ventures, where I help conduct due diligence for
+          departments at United.
+          <br /><br />
+          I'm also involved with Angel Star Ventures, where I help conduct due diligence for
           angel investors evaluating early-stage startups, from pre-seed through select Series A opportunities.
         </p>
         <div className="space-y-12">

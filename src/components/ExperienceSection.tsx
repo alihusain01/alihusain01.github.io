@@ -37,6 +37,16 @@ const experiences: Experience[] = [
   },
 ];
 
+interface Certification {
+  name: string;
+  date: string;
+}
+
+const certifications: Certification[] = [
+  { name: "AWS Cloud Practitioner", date: "Sept 2024" },
+  { name: "AWS Certified Developer Associate", date: "Sept 2025" },
+];
+
 const TechList = ({ tech }: { tech?: string[] }) => {
   if (!tech) return null;
   return (
@@ -81,6 +91,18 @@ const ExperienceSection = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="mt-16">
+          <h2 className="text-3xl font-bold text-foreground mb-8">Certifications</h2>
+          <div className="space-y-4">
+            {certifications.map((cert, index) => (
+              <div key={index} className="flex flex-col md:flex-row md:items-center md:justify-between gap-1">
+                <span className="text-sm text-muted-foreground">{cert.name}</span>
+                <span className="text-sm text-muted-foreground">{cert.date}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

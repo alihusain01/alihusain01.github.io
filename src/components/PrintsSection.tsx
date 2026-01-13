@@ -3,7 +3,6 @@ interface Print {
   description: string;
   specs: string[];
   image: string;
-  link?: string;
 }
 
 const prints: Print[] = [
@@ -29,42 +28,31 @@ const prints: Print[] = [
 
 const PrintsSection = () => {
   return (
-    <section id="prints" className="py-20 relative z-10">
+    <section id="prints" className="py-16 relative z-10">
       <div className="max-w-4xl mx-auto px-6">
-        <h2 className="font-mono text-sm text-accent mb-4">// 3d prints</h2>
-        <p className="text-muted-foreground mb-12 max-w-xl">
-          Designing functional objects that solve real problems. All models are designed in 
-          Fusion 360 and printed on a Prusa MK3S+.
-        </p>
+        <h2 className="text-2xl font-bold text-foreground mb-12">3D Prints</h2>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="space-y-16">
           {prints.map((print, index) => (
-            <div 
-              key={index}
-              className="group bg-card border border-dashed border-grid hover:border-accent rounded-lg overflow-hidden transition-all"
-            >
-              <div className="relative aspect-square overflow-hidden">
+            <div key={index} className="space-y-4">
+              <div className="aspect-video overflow-hidden rounded-lg">
                 <img 
                   src={print.image} 
                   alt={print.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60" />
               </div>
               
-              <div className="p-5 space-y-3">
-                <h3 className="text-lg font-semibold text-foreground">{print.name}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+              <div className="space-y-2">
+                <h3 className="text-xl font-semibold text-foreground">{print.name}</h3>
+                <p className="text-muted-foreground leading-relaxed">
                   {print.description}
                 </p>
                 
-                <div className="flex flex-wrap gap-2 pt-2">
+                <div className="flex gap-4 pt-1 text-sm text-muted-foreground">
                   {print.specs.map((spec, i) => (
-                    <span 
-                      key={i}
-                      className="px-2 py-1 bg-muted text-muted-foreground font-mono text-xs rounded"
-                    >
-                      {spec}
+                    <span key={i}>
+                      {spec}{i < print.specs.length - 1 && " ·"}
                     </span>
                   ))}
                 </div>

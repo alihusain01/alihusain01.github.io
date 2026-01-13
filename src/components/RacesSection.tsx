@@ -68,49 +68,38 @@ const races: Race[] = [
 
 const RacesSection = () => {
   return (
-    <section id="races" className="py-20 relative z-10">
+    <section id="races" className="py-16 relative z-10">
       <div className="max-w-4xl mx-auto px-6">
-        <h2 className="font-mono text-sm text-accent mb-4">// races</h2>
-        <p className="text-muted-foreground mb-12 max-w-xl">
-          Training for endurance events teaches discipline, resilience, and the art of pacing—skills 
-          that translate directly into building great software.
-        </p>
+        <h2 className="text-2xl font-bold text-foreground mb-12">Races</h2>
         
-        <div className="grid gap-8">
+        <div className="space-y-16">
           {races.map((race, index) => (
-            <div 
-              key={index}
-              className="group grid md:grid-cols-[280px_1fr] gap-6 p-6 bg-card border border-dashed border-grid hover:border-accent rounded-lg transition-all"
-            >
-              <div className="relative overflow-hidden rounded aspect-video md:aspect-square">
+            <div key={index} className="space-y-4">
+              <div className="aspect-video overflow-hidden rounded-lg">
                 <img 
                   src={race.image} 
                   alt={race.name}
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                  className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
-                <div className="absolute bottom-3 left-3 font-mono text-xs text-foreground">
-                  {race.date}
-                </div>
               </div>
               
-              <div className="flex flex-col justify-between">
-                <div>
-                  <div className="flex items-center gap-3 mb-2">
-                    <span className="px-2 py-0.5 bg-accent/10 text-accent text-xs font-mono rounded">
-                      {race.type}
-                    </span>
-                    <span className="text-muted-foreground text-sm">{race.location}</span>
-                  </div>
-                  <h3 className="text-2xl font-semibold text-foreground mb-1">{race.name}</h3>
-                  <p className="font-mono text-lg text-accent">{race.finishTime}</p>
+              <div className="space-y-2">
+                <div className="flex items-center gap-3 text-sm text-muted-foreground">
+                  <span>{race.type}</span>
+                  <span>·</span>
+                  <span>{race.location}</span>
+                  <span>·</span>
+                  <span>{race.date}</span>
                 </div>
                 
-                <div className="grid grid-cols-3 gap-4 mt-6 pt-4 border-t border-dashed border-grid">
+                <h3 className="text-xl font-semibold text-foreground">{race.name}</h3>
+                <p className="text-foreground">{race.finishTime}</p>
+                
+                <div className="flex gap-6 pt-2 text-sm">
                   {race.stats.map((stat, i) => (
                     <div key={i}>
-                      <p className="font-mono text-xs text-muted-foreground uppercase">{stat.label}</p>
-                      <p className="font-mono text-lg text-foreground">{stat.value}</p>
+                      <p className="text-muted-foreground">{stat.label}</p>
+                      <p className="text-foreground">{stat.value}</p>
                     </div>
                   ))}
                 </div>

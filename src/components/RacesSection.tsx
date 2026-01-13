@@ -70,7 +70,7 @@ const RacesSection = () => {
   return (
     <section id="races" className="py-16 relative z-10">
       <div className="max-w-4xl mx-auto px-6">
-        <h2 className="text-2xl font-bold text-foreground mb-12">Races</h2>
+        <h2 className="text-3xl font-bold text-foreground mb-12">Races</h2>
         
         <div className="space-y-16">
           {races.map((race, index) => (

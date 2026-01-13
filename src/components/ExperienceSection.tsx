@@ -4,25 +4,13 @@ interface Role {
   tech?: string[];
 }
 
-interface SingleExperience {
-  type: 'single';
-  title: string;
-  company: string;
-  period: string;
-  tech?: string[];
-}
-
-interface MultiRoleExperience {
-  type: 'multi';
+interface Experience {
   company: string;
   roles: Role[];
 }
 
-type Experience = SingleExperience | MultiRoleExperience;
-
 const experiences: Experience[] = [
   {
-    type: 'multi',
     company: "Tech Company",
     roles: [
       { title: "Senior Software Engineer", period: "2023 - Present", tech: ["TypeScript", "React", "AWS"] },
@@ -32,18 +20,18 @@ const experiences: Experience[] = [
     ]
   },
   {
-    type: 'single',
-    title: "Software Engineer",
     company: "Startup Inc",
-    period: "2020 - 2022",
-    tech: ["Python", "Django", "PostgreSQL", "Docker"]
+    roles: [
+      { title: "Lead Engineer", period: "2021 - 2022", tech: ["Python", "Django", "AWS"] },
+      { title: "Software Engineer", period: "2020 - 2021", tech: ["Python", "Django", "PostgreSQL", "Docker"] },
+    ]
   },
   {
-    type: 'single',
-    title: "Junior Developer",
     company: "Agency Co",
-    period: "2018 - 2020",
-    tech: ["JavaScript", "Vue.js", "PHP", "MySQL"]
+    roles: [
+      { title: "Developer", period: "2019 - 2020", tech: ["JavaScript", "Vue.js", "Node.js"] },
+      { title: "Junior Developer", period: "2018 - 2019", tech: ["JavaScript", "PHP", "MySQL"] },
+    ]
   }
 ];
 
@@ -69,31 +57,18 @@ const ExperienceSection = () => {
         <div className="space-y-12">
           {experiences.map((exp, index) => (
             <div key={index} className="space-y-3">
-              {exp.type === 'multi' ? (
-                <>
-                  <h3 className="text-lg font-bold text-foreground">{exp.company}</h3>
-                  <div className="space-y-4">
-                    {exp.roles.map((role, i) => (
-                      <div key={i} className="space-y-1">
-                        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-1">
-                          <span className="text-sm text-muted-foreground">{role.title}</span>
-                          <span className="text-sm text-muted-foreground">{role.period}</span>
-                        </div>
-                        <TechList tech={role.tech} />
-                      </div>
-                    ))}
+              <h3 className="text-lg font-bold text-foreground">{exp.company}</h3>
+              <div className="space-y-4">
+                {exp.roles.map((role, i) => (
+                  <div key={i} className="space-y-1">
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-1">
+                      <span className="text-sm text-muted-foreground">{role.title}</span>
+                      <span className="text-sm text-muted-foreground">{role.period}</span>
+                    </div>
+                    <TechList tech={role.tech} />
                   </div>
-                </>
-              ) : (
-                <>
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-1">
-                    <h3 className="text-lg font-semibold text-foreground">{exp.title}</h3>
-                    <span className="text-sm text-muted-foreground">{exp.period}</span>
-                  </div>
-                  <p className="text-muted-foreground">{exp.company}</p>
-                  <TechList tech={exp.tech} />
-                </>
-              )}
+                ))}
+              </div>
             </div>
           ))}
         </div>

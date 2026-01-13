@@ -57,7 +57,7 @@ const ExperienceSection = () => {
         <div className="space-y-12">
           {experiences.map((exp, index) => (
             <div key={index} className="space-y-3">
-              <h3 className="text-lg font-bold text-foreground">{exp.company}</h3>
+              <h3 className="text-xl font-bold text-foreground">{exp.company}</h3>
               <div className="space-y-4">
                 {exp.roles.map((role, i) => (
                   <div key={i} className="space-y-1">

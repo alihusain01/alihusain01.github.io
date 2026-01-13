@@ -76,3 +76,45 @@
     text-wrap: balance;
   }
 }
+
+@keyframes pulse-vertical {
+  0% {
+    top: -32px;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes pulse-horizontal {
+  0% {
+    left: -64px;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+.animate-pulse-vertical {
+  animation: pulse-vertical linear forwards;
+}
+
+.animate-pulse-horizontal {
+  animation: pulse-horizontal linear forwards;
+}

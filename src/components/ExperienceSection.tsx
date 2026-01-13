@@ -1,6 +1,7 @@
 interface Role {
   title: string;
   period: string;
+  tech?: string[];
 }
 
 interface SingleExperience {
@@ -15,7 +16,6 @@ interface MultiRoleExperience {
   type: 'multi';
   company: string;
   roles: Role[];
-  tech?: string[];
 }
 
 type Experience = SingleExperience | MultiRoleExperience;
@@ -25,12 +25,11 @@ const experiences: Experience[] = [
     type: 'multi',
     company: "Tech Company",
     roles: [
-      { title: "Senior Software Engineer", period: "2023 - Present" },
-      { title: "Software Engineer II", period: "2022 - 2023" },
-      { title: "Software Engineer", period: "2021 - 2022" },
-      { title: "Junior Software Engineer", period: "2020 - 2021" },
-    ],
-    tech: ["TypeScript", "React", "Node.js", "AWS"]
+      { title: "Senior Software Engineer", period: "2023 - Present", tech: ["TypeScript", "React", "AWS"] },
+      { title: "Software Engineer II", period: "2022 - 2023", tech: ["TypeScript", "React", "Node.js"] },
+      { title: "Software Engineer", period: "2021 - 2022", tech: ["JavaScript", "React", "Express"] },
+      { title: "Junior Software Engineer", period: "2020 - 2021", tech: ["JavaScript", "HTML", "CSS"] },
+    ]
   },
   {
     type: 'single',
@@ -48,6 +47,19 @@ const experiences: Experience[] = [
   }
 ];
 
+const TechList = ({ tech }: { tech?: string[] }) => {
+  if (!tech) return null;
+  return (
+    <div className="flex flex-wrap gap-2">
+      {tech.map((t, i) => (
+        <span key={i} className="text-xs text-muted-foreground">
+          {t}{i < tech.length - 1 && " ·"}
+        </span>
+      ))}
+    </div>
+  );
+};
+
 const ExperienceSection = () => {
   return (
     <section id="experience" className="py-16 relative z-10">
@@ -60,11 +72,14 @@ const ExperienceSection = () => {
               {exp.type === 'multi' ? (
                 <>
                   <h3 className="text-lg font-bold text-foreground">{exp.company}</h3>
-                  <div className="space-y-2">
+                  <div className="space-y-4">
                     {exp.roles.map((role, i) => (
-                      <div key={i} className="flex flex-col md:flex-row md:items-center md:justify-between gap-1">
-                        <span className="text-sm text-muted-foreground">{role.title}</span>
-                        <span className="text-sm text-muted-foreground">{role.period}</span>
+                      <div key={i} className="space-y-1">
+                        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-1">
+                          <span className="text-sm text-muted-foreground">{role.title}</span>
+                          <span className="text-sm text-muted-foreground">{role.period}</span>
+                        </div>
+                        <TechList tech={role.tech} />
                       </div>
                     ))}
                   </div>
@@ -76,20 +91,8 @@ const ExperienceSection = () => {
                     <span className="text-sm text-muted-foreground">{exp.period}</span>
                   </div>
                   <p className="text-muted-foreground">{exp.company}</p>
+                  <TechList tech={exp.tech} />
                 </>
-              )}
-              
-              {exp.tech && (
-                <div className="flex flex-wrap gap-2 pt-1">
-                  {exp.tech.map((t, i) => (
-                    <span 
-                      key={i} 
-                      className="text-xs text-muted-foreground"
-                    >
-                      {t}{i < exp.tech!.length - 1 && " ·"}
-                    </span>
-                  ))}
-                </div>
               )}
             </div>
           ))}

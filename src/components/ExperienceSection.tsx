@@ -56,8 +56,11 @@ const ExperienceSection = () => {
     <section id="experience" className="py-16 relative z-10">
       <div className="max-w-4xl mx-auto px-6">
         <h2 className="text-3xl font-bold text-foreground mb-4">Experience</h2>
-        <p className="text-muted-foreground mb-12">A summary of my professional journey and the roles I've held.</p>
-
+        <p className="text-muted-foreground mb-12">
+          I'm currently in the Early Career Digital Leadership Program (ECDLP) at United Airlines. Through this 2 year
+          program, I gained exposure to 4 different teams throughout the Digital Technology and Customer Product
+          departments at United.
+        </p>
         <div className="space-y-12">
           {experiences.map((exp, index) => (
             <div key={index} className="space-y-3">

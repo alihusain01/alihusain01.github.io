@@ -7,7 +7,7 @@ const DashedBackground = () => {
         {[0, 25, 50, 75, 100].map((percent) => (
           <div
             key={`v-${percent}`}
-            className="absolute top-0 h-full border-l border-dashed border-foreground/[0.15]"
+            className="absolute top-0 h-full border-l border-dashed border-foreground/[0.08]"
             style={{ left: `calc(${percent}% - ${percent === 100 ? '1px' : '0px'})` }}
           />
         ))}
@@ -18,7 +18,7 @@ const DashedBackground = () => {
         {[...Array(6)].map((_, i) => (
           <div
             key={`h-${i}`}
-            className="w-full border-t border-dashed border-foreground/[0.15]"
+            className="w-full border-t border-dashed border-foreground/[0.08]"
           />
         ))}
       </div>

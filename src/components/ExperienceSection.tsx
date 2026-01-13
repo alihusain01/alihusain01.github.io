@@ -33,17 +33,7 @@ const experiences: Experience[] = [
   },
   {
     company: "Angel Star Ventures",
-    roles: [
-      { title: "Lead Engineer", period: "2021 - 2022", tech: ["Python", "Django", "AWS"] },
-      { title: "Software Engineer", period: "2020 - 2021", tech: ["Python", "Django", "PostgreSQL", "Docker"] },
-    ],
-  },
-  {
-    company: "Agency Co",
-    roles: [
-      { title: "Developer", period: "2019 - 2020", tech: ["JavaScript", "Vue.js", "Node.js"] },
-      { title: "Junior Developer", period: "2018 - 2019", tech: ["JavaScript", "PHP", "MySQL"] },
-    ],
+    roles: [{ title: "Junior Associate", period: "May 2025 - Present", tech: ["Due Diligence", "Reporting"] }],
   },
 ];
 

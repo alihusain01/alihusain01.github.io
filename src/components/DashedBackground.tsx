@@ -3,12 +3,14 @@ const DashedBackground = () => {
     <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
       {/* Grid container matching content width */}
       <div className="h-full max-w-4xl mx-auto px-6 relative">
-        {/* Left edge line */}
-        <div className="absolute left-6 top-0 h-full border-l border-dashed border-foreground/[0.15]" />
-        {/* Right edge line */}
-        <div className="absolute right-6 top-0 h-full border-l border-dashed border-foreground/[0.15]" />
-        {/* Center line */}
-        <div className="absolute left-1/2 top-0 h-full border-l border-dashed border-foreground/[0.15]" />
+        {/* Evenly spaced vertical lines */}
+        {[0, 25, 50, 75, 100].map((percent) => (
+          <div
+            key={`v-${percent}`}
+            className="absolute top-0 h-full border-l border-dashed border-foreground/[0.15]"
+            style={{ left: `calc(${percent}% - ${percent === 100 ? '1px' : '0px'})` }}
+          />
+        ))}
       </div>
       
       {/* Horizontal dashed lines */}

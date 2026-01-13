@@ -63,30 +63,6 @@ const PrintsSection = () => {
       <div className="max-w-4xl mx-auto px-6">
         <h2 className="text-3xl font-bold text-foreground mb-12">3D Prints</h2>
         
-        {/* Printer Info */}
-        <div className="mb-16 p-6 rounded-lg border border-border bg-card">
-          <h3 className="text-lg font-semibold text-foreground mb-2">My Printer</h3>
-          <p className="text-xl font-bold text-foreground mb-3">Bambu Lab A1</p>
-          <p className="text-sm text-muted-foreground leading-relaxed">
-            A fast, reliable CoreXY printer with automatic bed leveling, vibration compensation, and flow calibration. 
-            Features a 256×256×256mm build volume with multi-color capability via the AMS Lite system.
-          </p>
-          <div className="flex gap-6 mt-4 text-sm">
-            <div>
-              <p className="text-muted-foreground">Build Volume</p>
-              <p className="text-foreground">256³ mm</p>
-            </div>
-            <div>
-              <p className="text-muted-foreground">Max Speed</p>
-              <p className="text-foreground">500mm/s</p>
-            </div>
-            <div>
-              <p className="text-muted-foreground">Nozzle</p>
-              <p className="text-foreground">0.4mm</p>
-            </div>
-          </div>
-        </div>
-        
         <div className="space-y-12">
           {prints.map((print, index) => (
             <div key={index} className="flex items-start gap-8">

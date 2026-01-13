@@ -58,14 +58,6 @@ const ExperienceSection = () => {
               
               <p className="text-muted-foreground">{exp.company}</p>
               
-              <ul className="space-y-1.5">
-                {exp.description.map((item, i) => (
-                <li key={i} className="text-foreground text-sm">
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              
               {exp.tech && (
                 <div className="flex flex-wrap gap-2 pt-1">
                   {exp.tech.map((t, i) => (

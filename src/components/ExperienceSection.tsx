@@ -43,8 +43,8 @@ interface Certification {
 }
 
 const certifications: Certification[] = [
-  { name: "AWS Cloud Practitioner", date: "Sept 2024" },
   { name: "AWS Certified Developer Associate", date: "Sept 2025" },
+  { name: "AWS Cloud Practitioner", date: "Sept 2024" },
 ];
 
 const TechList = ({ tech }: { tech?: string[] }) => {
@@ -94,7 +94,7 @@ const ExperienceSection = () => {
         </div>
 
         <div className="mt-16">
-          <h2 className="text-3xl font-bold text-foreground mb-8">Certifications</h2>
+          <h3 className="text-xl font-bold text-foreground mb-8">Certifications</h3>
           <div className="space-y-4">
             {certifications.map((cert, index) => (
               <div key={index} className="flex flex-col md:flex-row md:items-center md:justify-between gap-1">

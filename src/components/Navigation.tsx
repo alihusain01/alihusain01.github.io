@@ -1,45 +1,49 @@
+import { Link, useLocation } from "react-router-dom";
+
 const Navigation = () => {
-  const scrollToSection = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-  };
+  const location = useLocation();
+  
+  const isActive = (path: string) => location.pathname === path;
 
   return (
     <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-sm border-b border-dashed border-grid">
       <div className="max-w-4xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <span className="font-mono text-sm text-muted-foreground">~/portfolio</span>
+          <Link to="/" className="font-mono text-sm text-muted-foreground hover:text-accent transition-colors">
+            ~/portfolio
+          </Link>
           <ul className="flex gap-6 font-mono text-sm">
             <li>
-              <button 
-                onClick={() => scrollToSection('about')}
-                className="text-muted-foreground hover:text-accent-foreground transition-colors"
+              <Link 
+                to="/"
+                className={`transition-colors ${isActive('/') ? 'text-accent' : 'text-muted-foreground hover:text-accent'}`}
               >
                 about
-              </button>
+              </Link>
             </li>
             <li>
-              <button 
-                onClick={() => scrollToSection('experience')}
-                className="text-muted-foreground hover:text-accent-foreground transition-colors"
+              <Link 
+                to="/experience"
+                className={`transition-colors ${isActive('/experience') ? 'text-accent' : 'text-muted-foreground hover:text-accent'}`}
               >
                 experience
-              </button>
+              </Link>
             </li>
             <li>
-              <button 
-                onClick={() => scrollToSection('races')}
-                className="text-muted-foreground hover:text-accent-foreground transition-colors"
+              <Link 
+                to="/races"
+                className={`transition-colors ${isActive('/races') ? 'text-accent' : 'text-muted-foreground hover:text-accent'}`}
               >
                 races
-              </button>
+              </Link>
             </li>
             <li>
-              <button 
-                onClick={() => scrollToSection('prints')}
-                className="text-muted-foreground hover:text-accent-foreground transition-colors"
+              <Link 
+                to="/prints"
+                className={`transition-colors ${isActive('/prints') ? 'text-accent' : 'text-muted-foreground hover:text-accent'}`}
               >
                 prints
-              </button>
+              </Link>
             </li>
           </ul>
         </div>

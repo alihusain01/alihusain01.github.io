@@ -48,27 +48,19 @@ const ExperienceSection = () => {
       <div className="max-w-4xl mx-auto px-6">
         <h2 className="text-2xl font-bold text-foreground mb-12">Experience</h2>
         
-        <div className="space-y-12">
+        <div className="space-y-16">
           {experiences.map((exp, index) => (
-            <div key={index} className="space-y-3">
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-1">
-                <h3 className="text-lg font-semibold text-foreground">{exp.title}</h3>
-                <span className="text-sm text-muted-foreground">{exp.period}</span>
-              </div>
-              
+            <div key={index} className="text-center space-y-4">
+              <p className="text-sm text-muted-foreground tracking-wide">{exp.period}</p>
+              <h3 className="text-xl font-semibold text-foreground">{exp.title}</h3>
               <p className="text-muted-foreground">{exp.company}</p>
               
-              <ul className="space-y-1.5">
-                {exp.description.map((item, i) => (
-                  <li key={i} className="text-foreground text-sm flex items-start gap-2">
-                    <span className="text-muted-foreground">•</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
+              <p className="text-sm text-foreground/80 max-w-lg mx-auto leading-relaxed">
+                {exp.description.join(". ")}
+              </p>
               
               {exp.tech && (
-                <div className="flex flex-wrap gap-2 pt-1">
+                <div className="flex flex-wrap justify-center gap-2 pt-2">
                   {exp.tech.map((t, i) => (
                     <span 
                       key={i} 

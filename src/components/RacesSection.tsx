@@ -124,11 +124,11 @@ const RacesSection = () => {
         
         <div className="space-y-12">
           {races.map((race, index) => (
-            <div key={index} className="flex items-start gap-8">
+          <div key={index} className="flex items-start gap-8">
               <img 
                 src={race.medalImage} 
                 alt={`${race.name} medal`}
-                className="w-32 h-32 object-contain flex-shrink-0"
+                className="w-32 h-32 object-contain object-top flex-shrink-0"
               />
               
               <div className="flex-1 space-y-3">

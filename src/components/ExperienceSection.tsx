@@ -80,12 +80,9 @@ const ExperienceSection = () => {
               <h3 className="text-xl font-bold text-foreground">{exp.company}</h3>
               <div className="space-y-4">
                 {exp.roles.map((role, i) => (
-                  <div key={i} className="space-y-1">
-                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-1">
-                      <span className="text-sm text-muted-foreground">{role.title}</span>
-                      <span className="text-sm text-muted-foreground">{role.period}</span>
-                    </div>
-                    <TechList tech={role.tech} />
+                  <div key={i} className="flex flex-col md:flex-row md:items-center md:justify-between gap-1">
+                    <span className="text-sm text-muted-foreground">{role.title}</span>
+                    <span className="text-sm text-muted-foreground">{role.period}</span>
                   </div>
                 ))}
               </div>

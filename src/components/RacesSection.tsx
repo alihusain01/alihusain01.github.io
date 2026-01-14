@@ -124,14 +124,16 @@ const RacesSection = () => {
         
         <div className="space-y-12">
           {races.map((race, index) => (
-          <div key={index} className="flex items-start gap-8">
-              <img 
-                src={race.medalImage} 
-                alt={`${race.name} medal`}
-                className="w-32 h-32 object-contain object-top flex-shrink-0"
-              />
+          <div key={index} className="flex gap-8">
+              <div className="w-32 flex-shrink-0">
+                <img 
+                  src={race.medalImage} 
+                  alt={`${race.name} medal`}
+                  className="w-full h-auto"
+                />
+              </div>
               
-              <div className="flex-1 space-y-3">
+              <div className="flex-1 space-y-3 pt-1">
                 <h3 className="text-xl font-semibold text-foreground">{race.name}</h3>
                 
                 <div className="flex items-start gap-3 text-sm text-muted-foreground">

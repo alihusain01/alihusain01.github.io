@@ -33,27 +33,43 @@ const RotatingModel = () => {
     }
   });
 
+  // Center and scale the model
+  scene.traverse((child) => {
+    if (child instanceof THREE.Mesh) {
+      child.castShadow = true;
+      child.receiveShadow = true;
+    }
+  });
+
+  // Compute bounding box to auto-center
+  const box = new THREE.Box3().setFromObject(scene);
+  const center = box.getCenter(new THREE.Vector3());
+  const size = box.getSize(new THREE.Vector3());
+  const maxDim = Math.max(size.x, size.y, size.z);
+  const scale = 2 / maxDim;
+
   return (
-    <primitive 
-      ref={modelRef} 
-      object={scene} 
-      scale={1.5} 
-      position={[0, 0, 0]} 
-    />
+    <group ref={modelRef}>
+      <primitive 
+        object={scene} 
+        scale={scale} 
+        position={[-center.x * scale, -center.y * scale, -center.z * scale]} 
+      />
+    </group>
   );
 };
 
 const Model3DViewer = () => {
   return (
-    <div className="relative flex-shrink-0 w-32 h-32">
-      <Canvas camera={{ position: [0, 0, 5], fov: 45 }}>
-        <ambientLight intensity={0.5} />
-        <directionalLight position={[10, 10, 5]} intensity={1} />
+    <div className="relative flex-shrink-0 w-32 h-32 rounded-lg overflow-hidden bg-muted/20">
+      <Canvas camera={{ position: [0, 0, 4], fov: 50 }}>
+        <ambientLight intensity={0.8} />
+        <directionalLight position={[5, 5, 5]} intensity={1.5} />
+        <directionalLight position={[-5, -5, -5]} intensity={0.5} />
         <Suspense fallback={null}>
           <RotatingModel />
-          <Environment preset="studio" />
         </Suspense>
-        <OrbitControls enableZoom={false} enablePan={false} />
+        <OrbitControls enableZoom={false} enablePan={false} autoRotate={false} />
       </Canvas>
     </div>
   );

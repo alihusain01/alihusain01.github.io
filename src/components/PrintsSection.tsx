@@ -25,36 +25,30 @@ const prints: Print[] = [
 
 const RotatingModel = () => {
   const { scene } = useGLTF('/models/gu-gel.glb');
-  const modelRef = useRef<THREE.Group>(null);
+  const groupRef = useRef<THREE.Group>(null);
 
-  useFrame((_, delta) => {
-    if (modelRef.current) {
-      modelRef.current.rotation.y += delta * 0.5;
-    }
-  });
-
-  // Center and scale the model
-  scene.traverse((child) => {
-    if (child instanceof THREE.Mesh) {
-      child.castShadow = true;
-      child.receiveShadow = true;
-    }
-  });
+  // Clone the scene to avoid issues with reusing
+  const clonedScene = scene.clone();
 
   // Compute bounding box to auto-center
-  const box = new THREE.Box3().setFromObject(scene);
+  const box = new THREE.Box3().setFromObject(clonedScene);
   const center = box.getCenter(new THREE.Vector3());
   const size = box.getSize(new THREE.Vector3());
   const maxDim = Math.max(size.x, size.y, size.z);
   const scale = 2 / maxDim;
 
+  // Center the scene at origin
+  clonedScene.position.set(-center.x, -center.y, -center.z);
+
+  useFrame((_, delta) => {
+    if (groupRef.current) {
+      groupRef.current.rotation.y += delta * 0.5;
+    }
+  });
+
   return (
-    <group ref={modelRef}>
-      <primitive 
-        object={scene} 
-        scale={scale} 
-        position={[-center.x * scale, -center.y * scale, -center.z * scale]} 
-      />
+    <group ref={groupRef} scale={scale}>
+      <primitive object={clonedScene} />
     </group>
   );
 };
@@ -69,7 +63,6 @@ const Model3DViewer = () => {
         <Suspense fallback={null}>
           <RotatingModel />
         </Suspense>
-        <OrbitControls enableZoom={false} enablePan={false} autoRotate={false} />
       </Canvas>
     </div>
   );

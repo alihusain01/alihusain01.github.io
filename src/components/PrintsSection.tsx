@@ -35,7 +35,7 @@ const RotatingModel = () => {
     const box = new THREE.Box3().setFromObject(clonedScene);
     const size = box.getSize(new THREE.Vector3());
     const maxDim = Math.max(size.x, size.y, size.z);
-    return 2 / maxDim;
+    return 1.4 / maxDim;
   }, [clonedScene]);
 
   useFrame((_, delta) => {

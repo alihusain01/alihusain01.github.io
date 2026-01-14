@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="medal icon">
+  <defs>
+    <linearGradient id="ribbon" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#5b8def"/>
+      <stop offset="100%" stop-color="#6ce1c5"/>
+    </linearGradient>
+    <linearGradient id="medal" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#f7d34a"/>
+      <stop offset="100%" stop-color="#f4a133"/>
+    </linearGradient>
+  </defs>
+  <rect x="18" y="6" width="10" height="26" rx="3" fill="url(#ribbon)"/>
+  <rect x="36" y="6" width="10" height="26" rx="3" fill="url(#ribbon)"/>
+  <circle cx="32" cy="42" r="14" fill="url(#medal)" stroke="#d9821a" stroke-width="2"/>
+  <circle cx="32" cy="42" r="7" fill="#ffe8a3" />
+  <path d="M27 38h10l-5 9z" fill="#d9821a"/>
+</svg>
+

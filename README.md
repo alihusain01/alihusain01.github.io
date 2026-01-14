@@ -62,7 +62,34 @@ This project is built with:
 
 ## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+### GitHub Pages (Automatic)
+
+This repository is configured for automatic deployment to GitHub Pages. The site will be automatically built and deployed whenever you push to the `main` branch.
+
+**Setup steps:**
+
+1. Go to your repository settings on GitHub
+2. Navigate to **Settings** → **Pages**
+3. Under **Source**, select **GitHub Actions**
+4. Push your changes to the `main` branch - the GitHub Action will automatically build and deploy your site
+
+Your site will be available at: `https://alihusain.github.io`
+
+### Manual Deployment
+
+If you prefer to deploy manually:
+
+```sh
+# Build the project
+npm run build
+
+# The dist folder contains the built files
+# You can deploy the contents of the dist folder to GitHub Pages
+```
+
+### Lovable Deployment
+
+You can also deploy via Lovable by opening [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and clicking on Share -> Publish.
 
 ## Can I connect a custom domain to my Lovable project?
 

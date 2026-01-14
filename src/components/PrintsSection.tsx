@@ -43,19 +43,21 @@ const RotatingModel = () => {
   );
 };
 
-const Model3DViewer = () => (
-  <div className="relative flex-shrink-0 w-32 h-32">
-    <Canvas camera={{ position: [0, 0, 5], fov: 45 }}>
-      <ambientLight intensity={0.5} />
-      <directionalLight position={[10, 10, 5]} intensity={1} />
-      <Suspense fallback={null}>
-        <RotatingModel />
-        <Environment preset="studio" />
-      </Suspense>
-      <OrbitControls enableZoom={false} enablePan={false} />
-    </Canvas>
-  </div>
-);
+const Model3DViewer = () => {
+  return (
+    <div className="relative flex-shrink-0 w-32 h-32">
+      <Canvas camera={{ position: [0, 0, 5], fov: 45 }}>
+        <ambientLight intensity={0.5} />
+        <directionalLight position={[10, 10, 5]} intensity={1} />
+        <Suspense fallback={null}>
+          <RotatingModel />
+          <Environment preset="studio" />
+        </Suspense>
+        <OrbitControls enableZoom={false} enablePan={false} />
+      </Canvas>
+    </div>
+  );
+};
 
 const PrintsSection = () => {
   return (

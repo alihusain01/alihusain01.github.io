@@ -81,7 +81,7 @@ const ExperienceSection = () => {
               <div className="space-y-4">
                 {exp.roles.map((role, i) => (
                   <div key={i} className="flex flex-col md:flex-row md:items-center md:justify-between gap-1">
-                    <span className="text-sm text-muted-foreground">{role.title}</span>
+                    <span className="text-sm font-semibold text-foreground">{role.title}</span>
                     <span className="text-sm text-muted-foreground">{role.period}</span>
                   </div>
                 ))}
@@ -95,7 +95,7 @@ const ExperienceSection = () => {
           <div className="space-y-2">
             {certifications.map((cert, index) => (
               <div key={index} className="flex flex-col md:flex-row md:items-center md:justify-between gap-1">
-                <span className="text-sm text-muted-foreground">{cert.name}</span>
+                <span className="text-sm font-semibold text-foreground">{cert.name}</span>
                 <span className="text-sm text-muted-foreground">{cert.date}</span>
               </div>
             ))}

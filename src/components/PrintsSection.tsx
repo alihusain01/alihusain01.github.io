@@ -10,7 +10,7 @@ interface Print {
 const prints: Print[] = [
   {
     name: "Modular Cable Organizer",
-    description: "A snap-together cable management system with customizable compartments. Designed to keep desk cables tidy with easy access for adding or removing wires.",
+    description: "When going on long runs, I needed a convenient and quick way to grab the gels I need. I designed this display case to solve that problem.",
     specs: [
       { label: "Material", value: "PLA+" },
       { label: "Print Time", value: "12hr" },

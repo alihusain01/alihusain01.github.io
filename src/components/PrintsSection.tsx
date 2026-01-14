@@ -55,8 +55,8 @@ const RotatingModel = () => {
 
 const Model3DViewer = () => {
   return (
-    <div className="relative flex-shrink-0 w-32 h-32 rounded-lg overflow-hidden bg-muted/20">
-      <Canvas camera={{ position: [0, 0, 4], fov: 50 }}>
+    <div className="relative flex-shrink-0 w-48 h-48 md:w-56 md:h-56 rounded-lg overflow-visible">
+      <Canvas camera={{ position: [0, 0, 5], fov: 40 }}>
         <ambientLight intensity={0.8} />
         <directionalLight position={[5, 5, 5]} intensity={1.5} />
         <directionalLight position={[-5, -5, -5]} intensity={0.5} />
@@ -76,7 +76,7 @@ const PrintsSection = () => {
         
         <div className="space-y-12">
           {prints.map((print, index) => (
-            <div key={index} className="flex items-start gap-8">
+            <div key={index} className="flex flex-col items-center md:flex-row md:items-start gap-6 md:gap-8">
               <Model3DViewer />
               
               <div className="flex-1 space-y-3">

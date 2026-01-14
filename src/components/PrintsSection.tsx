@@ -1,7 +1,7 @@
-import { Suspense, useRef, useMemo } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
-import { useGLTF, Center } from '@react-three/drei';
-import * as THREE from 'three';
+import { Suspense, useRef, useMemo } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { useGLTF, Center } from "@react-three/drei";
+import * as THREE from "three";
 
 interface Print {
   name: string;
@@ -14,17 +14,18 @@ interface Print {
 
 const prints: Print[] = [
   {
-    name: "Modular Cable Organizer",
-    description: "When going on long runs, I needed a convenient and quick way to grab the gels I need. I designed this display case to solve that problem.",
+    name: "Energy Gel Grab & Go",
+    description:
+      "When going on long runs, I needed a convenient and quick way to grab the gels I need. I designed this display case to solve that problem.",
     specs: [
       { label: "Material", value: "PLA+" },
-      { label: "Print Time", value: "6hr" }
-    ]
-  }
+      { label: "Print Time", value: "6hr" },
+    ],
+  },
 ];
 
 const RotatingModel = () => {
-  const { scene } = useGLTF('/models/gu-gel.glb');
+  const { scene } = useGLTF("/models/gu-gel.glb");
   const groupRef = useRef<THREE.Group>(null);
 
   // Clone and memoize the scene
@@ -73,19 +74,17 @@ const PrintsSection = () => {
     <section id="prints" className="py-16 relative z-10">
       <div className="max-w-4xl mx-auto px-6">
         <h2 className="text-3xl font-bold text-foreground mb-12">3D Prints</h2>
-        
+
         <div className="space-y-12">
           {prints.map((print, index) => (
             <div key={index} className="flex flex-col items-center md:flex-row md:items-start gap-6 md:gap-8">
               <Model3DViewer />
-              
+
               <div className="flex-1 space-y-3">
                 <h3 className="text-xl font-semibold text-foreground">{print.name}</h3>
-                
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {print.description}
-                </p>
-                
+
+                <p className="text-sm text-muted-foreground leading-relaxed">{print.description}</p>
+
                 <div className="flex gap-6 text-sm">
                   {print.specs.map((spec, i) => (
                     <div key={i}>

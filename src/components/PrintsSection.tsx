@@ -13,8 +13,7 @@ const prints: Print[] = [
     description: "When going on long runs, I needed a convenient and quick way to grab the gels I need. I designed this display case to solve that problem.",
     specs: [
       { label: "Material", value: "PLA+" },
-      { label: "Print Time", value: "12hr" },
-      { label: "Supports", value: "None" }
+      { label: "Print Time", value: "6hr" }
     ]
   }
 ];

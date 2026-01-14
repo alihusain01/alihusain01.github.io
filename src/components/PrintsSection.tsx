@@ -35,7 +35,7 @@ const RotatingModel = () => {
     const box = new THREE.Box3().setFromObject(clonedScene);
     const size = box.getSize(new THREE.Vector3());
     const maxDim = Math.max(size.x, size.y, size.z);
-    return 1.4 / maxDim;
+    return 1.8 / maxDim;
   }, [clonedScene]);
 
   useFrame((_, delta) => {
@@ -56,7 +56,7 @@ const RotatingModel = () => {
 const Model3DViewer = () => {
   return (
     <div className="relative flex-shrink-0 w-48 h-48 md:w-56 md:h-56 rounded-lg overflow-visible">
-      <Canvas camera={{ position: [0, 0, 5], fov: 40 }}>
+      <Canvas camera={{ position: [0, 0, 6], fov: 40 }}>
         <ambientLight intensity={0.8} />
         <directionalLight position={[5, 5, 5]} intensity={1.5} />
         <directionalLight position={[-5, -5, -5]} intensity={0.5} />

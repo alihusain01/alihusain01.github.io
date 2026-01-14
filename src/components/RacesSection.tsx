@@ -1,3 +1,12 @@
+import chicagoFallHalf from "@/assets/medals/chicago-fall-half.png";
+import chicagoTri from "@/assets/medals/chicago-tri.png";
+import ironmanMuncie from "@/assets/medals/ironman-muncie.png";
+import chicagoSpringHalf from "@/assets/medals/chicago-spring-half.png";
+import yosemiteHalf from "@/assets/medals/yosemite-half.png";
+import shamrockShuffle from "@/assets/medals/shamrock-shuffle.png";
+import schaumburgTT from "@/assets/medals/schaumburg-tt.png";
+import uiucHalf from "@/assets/medals/uiuc-half.png";
+
 interface Race {
   name: string;
   type: string;
@@ -8,6 +17,7 @@ interface Race {
     value: string;
   }[];
   finishTime: string;
+  medalImage: string;
 }
 
 const races: Race[] = [
@@ -19,7 +29,8 @@ const races: Race[] = [
     finishTime: "1:43:56",
     stats: [
       { label: "Pace", value: "7:55/mi" }
-    ]
+    ],
+    medalImage: chicagoFallHalf
   },
   {
     name: "Chicago Triathlon",
@@ -31,7 +42,8 @@ const races: Race[] = [
       { label: "Swim", value: "36:47" },
       { label: "Bike", value: "1:20:53" },
       { label: "Run", value: "55:25" }
-    ]
+    ],
+    medalImage: chicagoTri
   },
   {
     name: "Ironman 70.3",
@@ -43,7 +55,8 @@ const races: Race[] = [
       { label: "Swim", value: "53:54" },
       { label: "Bike", value: "3:36:39" },
       { label: "Run", value: "2:53:14" }
-    ]
+    ],
+    medalImage: ironmanMuncie
   },
   {
     name: "Chicago Spring Half Marathon",
@@ -53,7 +66,8 @@ const races: Race[] = [
     finishTime: "1:48:11",
     stats: [
       { label: "Pace", value: "8:15/mi" }
-    ]
+    ],
+    medalImage: chicagoSpringHalf
   },
   {
     name: "Yosemite Half Marathon",
@@ -63,7 +77,8 @@ const races: Race[] = [
     finishTime: "1:51:52",
     stats: [
       { label: "Pace", value: "8:32/mi" }
-    ]
+    ],
+    medalImage: yosemiteHalf
   },
   {
     name: "Bank of America Shamrock Shuffle",
@@ -73,7 +88,8 @@ const races: Race[] = [
     finishTime: "37:56",
     stats: [
       { label: "Pace", value: "7:37/mi" }
-    ]
+    ],
+    medalImage: shamrockShuffle
   },
   {
     name: "Schaumburg Turkey Trot",
@@ -84,7 +100,8 @@ const races: Race[] = [
     stats: [
       { label: "Pace", value: "9:01/mi" },
       { label: "Temp", value: "15°F" }
-    ]
+    ],
+    medalImage: schaumburgTT
   },
   {
     name: "UIUC Half Marathon",
@@ -94,25 +111,10 @@ const races: Race[] = [
     finishTime: "1:59:44",
     stats: [
       { label: "Pace", value: "9:07/mi" }
-    ]
+    ],
+    medalImage: uiucHalf
   }
 ];
-
-const Medal = () => (
-  <div className="relative flex-shrink-0">
-    {/* Ribbon */}
-    <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-12 h-8 overflow-hidden">
-      <div className="absolute left-0 w-6 h-10 bg-muted-foreground/30 -rotate-12 origin-top" />
-      <div className="absolute right-0 w-6 h-10 bg-muted-foreground/20 rotate-12 origin-top" />
-    </div>
-    
-    {/* Medal circle */}
-    <div className="relative w-24 h-24 rounded-full border-4 border-muted-foreground/40 bg-background flex items-center justify-center">
-      {/* Inner ring */}
-      <div className="absolute inset-2 rounded-full border border-muted-foreground/20" />
-    </div>
-  </div>
-);
 
 const RacesSection = () => {
   return (
@@ -123,7 +125,11 @@ const RacesSection = () => {
         <div className="space-y-12">
           {races.map((race, index) => (
             <div key={index} className="flex items-start gap-8">
-              <Medal />
+              <img 
+                src={race.medalImage} 
+                alt={`${race.name} medal`}
+                className="w-24 h-24 object-contain flex-shrink-0"
+              />
               
               <div className="flex-1 space-y-3">
                 <h3 className="text-xl font-semibold text-foreground">{race.name}</h3>

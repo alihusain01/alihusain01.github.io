@@ -12,51 +12,88 @@ interface Race {
 
 const races: Race[] = [
   {
+    name: "Chicago Fall Half Marathon",
+    type: "Half Marathon",
+    date: "Sep 2025",
+    location: "Chicago, IL",
+    finishTime: "1:43:56",
+    stats: [
+      { label: "Pace", value: "7:55/mi" }
+    ]
+  },
+  {
+    name: "Chicago Triathlon",
+    type: "Olympic",
+    date: "Aug 2025",
+    location: "Chicago, IL",
+    finishTime: "3:05:54",
+    stats: [
+      { label: "Swim", value: "36:47" },
+      { label: "Bike", value: "1:20:53" },
+      { label: "Run", value: "55:25" }
+    ]
+  },
+  {
     name: "Ironman 70.3",
     type: "Half Ironman",
-    date: "Sep 2024",
-    location: "Santa Cruz, CA",
-    finishTime: "5:42:18",
+    date: "Jul 2025",
+    location: "Muncie, IN",
+    finishTime: "7:34:08",
     stats: [
-      { label: "Swim", value: "32:15" },
-      { label: "Bike", value: "2:48:22" },
-      { label: "Run", value: "2:01:41" }
+      { label: "Swim", value: "53:54" },
+      { label: "Bike", value: "3:36:39" },
+      { label: "Run", value: "2:53:14" }
     ]
   },
   {
-    name: "Bay to Breakers",
-    type: "12K",
-    date: "May 2024",
-    location: "San Francisco, CA",
-    finishTime: "52:34",
-    stats: [
-      { label: "Pace", value: "7:02/mi" },
-      { label: "Elevation", value: "+420ft" },
-      { label: "Place", value: "312/10K" }
-    ]
-  },
-  {
-    name: "Oakland Half Marathon",
+    name: "Chicago Spring Half Marathon",
     type: "Half Marathon",
-    date: "Mar 2024",
-    location: "Oakland, CA",
-    finishTime: "1:38:22",
+    date: "May 2025",
+    location: "Chicago, IL",
+    finishTime: "1:48:11",
     stats: [
-      { label: "Pace", value: "7:31/mi" },
-      { label: "Splits", value: "Even" },
-      { label: "PR", value: "Yes!" }
+      { label: "Pace", value: "8:15/mi" }
     ]
   },
   {
-    name: "Escape from Alcatraz",
-    type: "Triathlon",
-    date: "Jun 2023",
-    location: "San Francisco, CA",
-    finishTime: "3:12:45",
+    name: "Yosemite Half Marathon",
+    type: "Half Marathon",
+    date: "May 2025",
+    location: "Bass Lake, CA",
+    finishTime: "1:51:52",
     stats: [
-      { label: "Swim", value: "42:18" },
-      { label: "Bike", value: "1:15:33" },
-      { label: "Run", value: "1:08:54" }
+      { label: "Pace", value: "8:32/mi" }
+    ]
+  },
+  {
+    name: "Bank of America Shamrock Shuffle",
+    type: "8K",
+    date: "Mar 2025",
+    location: "Chicago, IL",
+    finishTime: "37:56",
+    stats: [
+      { label: "Pace", value: "7:37/mi" }
+    ]
+  },
+  {
+    name: "Schaumburg Turkey Trot",
+    type: "Half Marathon",
+    date: "Nov 2024",
+    location: "Schaumburg, IL",
+    finishTime: "1:58:17",
+    stats: [
+      { label: "Pace", value: "9:01/mi" },
+      { label: "Temp", value: "15°F" }
+    ]
+  },
+  {
+    name: "UIUC Half Marathon",
+    type: "Half Marathon",
+    date: "Apr 2024",
+    location: "Champaign, IL",
+    finishTime: "1:59:44",
+    stats: [
+      { label: "Pace", value: "9:07/mi" }
     ]
   }
 ];

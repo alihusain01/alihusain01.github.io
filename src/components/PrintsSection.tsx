@@ -1,3 +1,8 @@
+import { Suspense, useRef } from 'react';
+import { Canvas, useFrame } from '@react-three/fiber';
+import { useGLTF, OrbitControls, Environment } from '@react-three/drei';
+import * as THREE from 'three';
+
 interface Print {
   name: string;
   description: string;
@@ -18,23 +23,37 @@ const prints: Print[] = [
   }
 ];
 
-const ModelPlaceholder = () => (
-  <div className="relative flex-shrink-0">
-    {/* Base platform */}
-    <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-20 h-2 bg-muted-foreground/20 rounded-full blur-sm" />
-    
-    {/* 3D model placeholder */}
-    <div className="relative w-24 h-24 rounded-lg border-2 border-dashed border-muted-foreground/40 bg-background flex items-center justify-center">
-      {/* Grid pattern */}
-      <div className="absolute inset-2 grid grid-cols-3 grid-rows-3 gap-0.5 opacity-20">
-        {[...Array(9)].map((_, i) => (
-          <div key={i} className="bg-muted-foreground rounded-sm" />
-        ))}
-      </div>
-      
-      {/* 3D icon hint */}
-      <div className="relative z-10 text-muted-foreground/50 text-xs font-mono">3D</div>
-    </div>
+const RotatingModel = () => {
+  const { scene } = useGLTF('/models/gu-gel.glb');
+  const modelRef = useRef<THREE.Group>(null);
+
+  useFrame((_, delta) => {
+    if (modelRef.current) {
+      modelRef.current.rotation.y += delta * 0.5;
+    }
+  });
+
+  return (
+    <primitive 
+      ref={modelRef} 
+      object={scene} 
+      scale={1.5} 
+      position={[0, 0, 0]} 
+    />
+  );
+};
+
+const Model3DViewer = () => (
+  <div className="relative flex-shrink-0 w-32 h-32">
+    <Canvas camera={{ position: [0, 0, 5], fov: 45 }}>
+      <ambientLight intensity={0.5} />
+      <directionalLight position={[10, 10, 5]} intensity={1} />
+      <Suspense fallback={null}>
+        <RotatingModel />
+        <Environment preset="studio" />
+      </Suspense>
+      <OrbitControls enableZoom={false} enablePan={false} />
+    </Canvas>
   </div>
 );
 
@@ -47,7 +66,7 @@ const PrintsSection = () => {
         <div className="space-y-12">
           {prints.map((print, index) => (
             <div key={index} className="flex items-start gap-8">
-              <ModelPlaceholder />
+              <Model3DViewer />
               
               <div className="flex-1 space-y-3">
                 <h3 className="text-xl font-semibold text-foreground">{print.name}</h3>

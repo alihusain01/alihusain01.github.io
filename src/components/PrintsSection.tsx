@@ -1,6 +1,6 @@
-import { Suspense, useRef } from 'react';
+import { Suspense, useRef, useMemo } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { useGLTF, OrbitControls, Environment } from '@react-three/drei';
+import { useGLTF, Center } from '@react-three/drei';
 import * as THREE from 'three';
 
 interface Print {
@@ -27,18 +27,16 @@ const RotatingModel = () => {
   const { scene } = useGLTF('/models/gu-gel.glb');
   const groupRef = useRef<THREE.Group>(null);
 
-  // Clone the scene to avoid issues with reusing
-  const clonedScene = scene.clone();
+  // Clone and memoize the scene
+  const clonedScene = useMemo(() => scene.clone(), [scene]);
 
-  // Compute bounding box to auto-center
-  const box = new THREE.Box3().setFromObject(clonedScene);
-  const center = box.getCenter(new THREE.Vector3());
-  const size = box.getSize(new THREE.Vector3());
-  const maxDim = Math.max(size.x, size.y, size.z);
-  const scale = 2 / maxDim;
-
-  // Center the scene at origin
-  clonedScene.position.set(-center.x, -center.y, -center.z);
+  // Calculate scale based on bounding box
+  const scale = useMemo(() => {
+    const box = new THREE.Box3().setFromObject(clonedScene);
+    const size = box.getSize(new THREE.Vector3());
+    const maxDim = Math.max(size.x, size.y, size.z);
+    return 2 / maxDim;
+  }, [clonedScene]);
 
   useFrame((_, delta) => {
     if (groupRef.current) {
@@ -48,7 +46,9 @@ const RotatingModel = () => {
 
   return (
     <group ref={groupRef} scale={scale}>
-      <primitive object={clonedScene} />
+      <Center>
+        <primitive object={clonedScene} />
+      </Center>
     </group>
   );
 };

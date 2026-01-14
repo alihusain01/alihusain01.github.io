@@ -16,24 +16,6 @@ const prints: Print[] = [
       { label: "Print Time", value: "12hr" },
       { label: "Supports", value: "None" }
     ]
-  },
-  {
-    name: "Parametric Desk Lamp",
-    description: "An adjustable articulating lamp with a geometric design. Features 3 degrees of freedom and accepts standard E26 bulbs.",
-    specs: [
-      { label: "Material", value: "PETG" },
-      { label: "Print Time", value: "18hr" },
-      { label: "Hardware", value: "M3" }
-    ]
-  },
-  {
-    name: "Honeycomb Planter",
-    description: "Self-watering planter with a honeycomb drainage system. The modular design allows connecting multiple units for a green wall effect.",
-    specs: [
-      { label: "Material", value: "ASA" },
-      { label: "Print Time", value: "8hr" },
-      { label: "Use", value: "Outdoor" }
-    ]
   }
 ];
 

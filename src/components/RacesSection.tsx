@@ -125,7 +125,7 @@ const RacesSection = () => {
         <div className="space-y-12">
           {races.map((race, index) => (
           <div key={index} className="flex gap-8">
-              <div className="w-32 flex-shrink-0">
+              <div className="w-48 flex-shrink-0">
                 <img 
                   src={race.medalImage} 
                   alt={`${race.name} medal`}

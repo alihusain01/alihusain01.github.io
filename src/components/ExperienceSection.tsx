@@ -14,12 +14,12 @@ const experiences: Experience[] = [
     company: "United Airlines",
     roles: [
       {
-        title: "Full-Stack Software Engineer - Network Planning",
+        title: "Full Stack Software Engineer - Network Planning",
         period: "Feb 2026 - Present",
         tech: ["AWS", "Java", "React"],
       },
       {
-        title: "Cloud Engineer - Pricing & Revenue Management",
+        title: "Software Engineer - Pricing & Revenue Management",
         period: "Aug 2025 - Feb 2026",
         tech: ["AWS", "Python", "SQL"],
       },
@@ -28,7 +28,7 @@ const experiences: Experience[] = [
         period: "Feb 2025 - Aug 2025",
         tech: ["Product Design", "SQL", "Communication"],
       },
-      { title: "Gen AI Engineer", period: "Aug 2024 - Feb 2025", tech: ["RAG", "Gen AI", "Python"] },
+      { title: "Gen AI Engineer - Data Engineering", period: "Aug 2024 - Feb 2025", tech: ["RAG", "Gen AI", "Python"] },
     ],
   },
   {

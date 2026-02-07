@@ -103,7 +103,7 @@ const races: Race[] = [
     type: "Half Marathon",
     date: "Nov 2024",
     location: "Schaumburg, IL",
-    finishTime: "1:58:17",
+    finishTime: "1:58:18",
     stats: [
       { label: "Pace", value: "9:01/mi" },
       { label: "Temp", value: "15°F" }

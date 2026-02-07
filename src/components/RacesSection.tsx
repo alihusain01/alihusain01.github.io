@@ -45,7 +45,8 @@ const races: Race[] = [
       { label: "Bike", value: "1:20:53" },
       { label: "Run", value: "55:25" }
     ],
-    medalImage: chicagoTri
+    medalImage: chicagoTri,
+    resultsLink: "https://www.athlinks.com/event/30585/results/Event/1118638/Course/2625762/Bib/4419"
   },
   {
     name: "Ironman 70.3",
@@ -58,7 +59,8 @@ const races: Race[] = [
       { label: "Bike", value: "3:36:39" },
       { label: "Run", value: "2:53:14" }
     ],
-    medalImage: ironmanMuncie
+    medalImage: ironmanMuncie,
+    resultsLink: "https://www.athlinks.com/event/39015/results/Event/1132126/Course/2664583/Bib/449"
   },
   {
     name: "Chicago Spring Half Marathon",
@@ -69,7 +71,8 @@ const races: Race[] = [
     stats: [
       { label: "Pace", value: "8:15/mi" }
     ],
-    medalImage: chicagoSpringHalf
+    medalImage: chicagoSpringHalf,
+    resultsLink: "https://www.athlinks.com/event/20887/results/Event/1063203/Course/2409347/Bib/5252"
   },
   {
     name: "Yosemite Half Marathon",
@@ -80,7 +83,8 @@ const races: Race[] = [
     stats: [
       { label: "Pace", value: "8:32/mi" }
     ],
-    medalImage: yosemiteHalf
+    medalImage: yosemiteHalf,
+    resultsLink: "https://www.athlinks.com/event/140922/results/Event/1111823/Course/2601690/Bib/3120"
   },
   {
     name: "Bank of America Shamrock Shuffle",
@@ -91,7 +95,8 @@ const races: Race[] = [
     stats: [
       { label: "Pace", value: "7:37/mi" }
     ],
-    medalImage: shamrockShuffle
+    medalImage: shamrockShuffle,
+    resultsLink: "https://www.athlinks.com/event/21569/results/Event/1107436/Course/2589250/Bib/13148"
   },
   {
     name: "Schaumburg Turkey Trot",
@@ -103,7 +108,8 @@ const races: Race[] = [
       { label: "Pace", value: "9:01/mi" },
       { label: "Temp", value: "15°F" }
     ],
-    medalImage: schaumburgTT
+    medalImage: schaumburgTT,
+    resultsLink: "https://www.athlinks.com/event/164898/results/Event/1097617/Course/2544980/Bib/1643"
   },
   {
     name: "UIUC Half Marathon",
@@ -114,7 +120,8 @@ const races: Race[] = [
     stats: [
       { label: "Pace", value: "9:07/mi" }
     ],
-    medalImage: uiucHalf
+    medalImage: uiucHalf,
+    resultsLink: "https://www.athlinks.com/event/137401/results/Event/1078002/Course/2462767/Bib/3995"
   }
 ];
 

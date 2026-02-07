@@ -16,7 +16,7 @@ const prints: Print[] = [
   {
     name: "Energy Gel Grab & Go",
     description:
-      "When going on long runs, I needed a convenient and quick way to sort through and grab my gels. This display case helps me keep them organized",
+      "When going on long runs, I needed a convenient and quick way to sort through and grab my gels. This display case helps me keep them organized.",
     specs: [
       { label: "Material", value: "PLA+" },
       { label: "Print Time", value: "6hr" },

@@ -18,6 +18,7 @@ interface Race {
   }[];
   finishTime: string;
   medalImage: string;
+  resultsLink?: string;
 }
 
 const races: Race[] = [
@@ -30,7 +31,8 @@ const races: Race[] = [
     stats: [
       { label: "Pace", value: "7:55/mi" }
     ],
-    medalImage: chicagoFallHalf
+    medalImage: chicagoFallHalf,
+    resultsLink: "https://www.athlinks.com/event/20834/results/Event/1072616/Course/2440334/Bib/11937"
   },
   {
     name: "Chicago Triathlon",
@@ -126,11 +128,13 @@ const RacesSection = () => {
           {races.map((race, index) => (
             <div key={index} className="flex flex-col sm:flex-row gap-4 sm:gap-8">
               <div className="w-32 sm:w-40 flex-shrink-0 self-start">
-                <img 
-                  src={race.medalImage} 
-                  alt={`${race.name} medal`}
-                  className="w-full h-auto"
-                />
+                <a href={race.resultsLink} target="_blank" rel="noopener noreferrer">
+                  <img 
+                    src={race.medalImage} 
+                    alt={`${race.name} medal`}
+                    className={`w-full h-auto${race.resultsLink ? ' cursor-pointer hover:opacity-80 transition-opacity' : ''}`}
+                  />
+                </a>
               </div>
               
               <div className="flex-1 space-y-3 pt-1">
